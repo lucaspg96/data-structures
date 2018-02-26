@@ -1,0 +1,5 @@
+package structures
+
+class List {
+
+}
