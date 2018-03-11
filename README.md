@@ -1,1 +1,2 @@
 # data-structures
+This [repository](https://github.com/lucaspg96/data-structures) contains the data structures implemented to the course CKP8077 - ESTRUTURAS DE DADOS on UFC. There is a package inside the *structures* package for each data structure implemented and, inside the test folder, there is the Scala Suit code containing the tests to the data structure
