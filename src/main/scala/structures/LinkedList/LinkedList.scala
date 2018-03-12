@@ -1,4 +1,4 @@
-package structures.list
+package structures.LinkedList
 
 trait LinkedList[T] {
 

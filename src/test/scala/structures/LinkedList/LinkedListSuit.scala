@@ -1,4 +1,4 @@
-package structures.list
+package structures.LinkedList
 
 import org.scalatest.FunSuite
 
@@ -7,15 +7,15 @@ import org.scalatest.junit.JUnitRunner
 
 
 @RunWith(classOf[JUnitRunner])
-class ListSuit extends FunSuite {
+class LinkedListSuit extends FunSuite {
 
   test("creating empty list") {
-    val emptyList: LinkedList[Int] = new Nil[Int]
+    val emptyList: LinkedList[Int] = new EmptyLinkedList[Int]
     assert(emptyList.isEmpty)
   }
 
   test("adding on beggining"){
-    val l = new Nil[Int]
+    val l = new EmptyLinkedList[Int]
     val l1 = l addBeginning 1
     val l2 = l1 addBeginning 2
 
@@ -24,7 +24,7 @@ class ListSuit extends FunSuite {
   }
 
   test("adding on end"){
-    val l = new Nil[Int]
+    val l = new EmptyLinkedList[Int]
     val l1 = l addEnd  1
     val l2 = l1 addEnd  2
 
@@ -33,7 +33,7 @@ class ListSuit extends FunSuite {
   }
 
   test("get element by index"){
-    val l = new Nil[Int]
+    val l = new EmptyLinkedList[Int]
     val l1 = l addEnd  1
     val l2 = l1 addEnd  2
     val l3 = l2 addEnd 3
@@ -44,7 +44,7 @@ class ListSuit extends FunSuite {
   }
 
   test("removing from list"){
-    val l = new Nil[Int]
+    val l = new EmptyLinkedList[Int]
     val l1 = l addEnd  1
     val l2 = l1 addEnd  2
     val l3 = l2 addEnd 3
@@ -55,7 +55,7 @@ class ListSuit extends FunSuite {
   }
 
   test("reversing list") {
-    val l = new Nil[Int]
+    val l = new EmptyLinkedList[Int]
     val l1 = l addEnd  1
     val l2 = l1 addEnd  2
     val l3 = l2 addEnd 3
