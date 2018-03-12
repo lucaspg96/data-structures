@@ -7,8 +7,14 @@ case class NonEmptyCircularLinkedList[T](elem: T, next: CircularLinkedList[T]) e
     case _ => next(i-1)
   }
   def add(e: T): CircularLinkedList[T] = new NonEmptyCircularLinkedList[T](elem,next add e)
+
   def remove(i: Int): CircularLinkedList[T] = i match {
-    case 0 => next
+    case 0 => {
+      if(this==Head){
+        Head.head = next
+      }
+      next
+    }
     case _ => new NonEmptyCircularLinkedList[T](elem, next remove i-1)
   }
 
