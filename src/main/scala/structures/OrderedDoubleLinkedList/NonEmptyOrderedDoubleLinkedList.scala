@@ -14,7 +14,7 @@ case class NonEmptyOrderedDoubleLinkedList(elem: Int, prev: OrderedDoubleLinkedL
 
   def remove(i: Int): OrderedDoubleLinkedList[Int] = i match {
     case 0 => next
-    case 1 => new NonEmptyOrderedDoubleLinkedList(elem, prev, next remove i-1)
+    case 1 => new NonEmptyOrderedDoubleLinkedList(elem, prev , next remove i-1)
     case _ => new NonEmptyOrderedDoubleLinkedList(elem, prev ,next remove i-1)
   }
 

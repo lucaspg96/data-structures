@@ -8,7 +8,7 @@ case class EmptyCircularLinkedList[T]() extends CircularLinkedList[T] {
   }
   def add(elem: T): CircularLinkedList[T] = {
     val newList = new NonEmptyCircularLinkedList[T](elem, this)
-    Head.head = newList
+    if(!Head.hasHead) Head.head = newList
 
     newList
   }

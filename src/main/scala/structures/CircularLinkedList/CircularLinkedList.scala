@@ -13,8 +13,9 @@ trait CircularLinkedList[T] {
   def ==(b: CircularLinkedList[T]): Boolean
 
   object Head{
-    var head: CircularLinkedList[T] = null
+    var head: CircularLinkedList[T] = new EmptyCircularLinkedList[T]
 
+    def hasHead: Boolean = !head.isEmpty
     def apply = head
   }
 }
