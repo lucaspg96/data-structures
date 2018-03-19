@@ -3,12 +3,12 @@ package structures.HashTables.StaticHashTable
 import math.ceil
 
 class StaticHashTable[T](n: Int, d: Int = 2, getKey: T => Int = {x: T => x.asInstanceOf[Int]}) {
-  private var s = 0
-  private val k: Int = ceil(n/d).asInstanceOf[Int]
-  private val values = (for(_ <- 1 to k) yield List[T]()).toArray
+  private var s = 0 //size
+  private val nBuckets: Int = ceil(n/d).asInstanceOf[Int] //number of buckets
+  private val values = (for(_ <- 1 to nBuckets) yield List[T]()).toArray //buckets
 
   def size = s
-  private def hashFunction(i: Int): Int = i%k
+  private def hashFunction(i: Int): Int = i%nBuckets
   def isEmpty = s==0
 
   def add(elem: T): Unit = {
@@ -38,6 +38,12 @@ class StaticHashTable[T](n: Int, d: Int = 2, getKey: T => Int = {x: T => x.asIns
     }
 
   }
+
+  override def toString: String = s"Table with $nBuckets buckets\n"+
+    (0 until nBuckets).
+      filter(i => values(i).length>0).
+      map(i => i + " -> " + values(i)).
+      mkString("\n")
 
 
 }

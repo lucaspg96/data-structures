@@ -29,6 +29,8 @@ class StaticHashTableSuit extends FunSuite {
     assert(table(33) == 33)
     assert(table(255) == 255)
     assert(table(233) == 233)
+
+//    println(table)
   }
 
   test("inserting TAD on table") {
